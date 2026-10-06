@@ -73,12 +73,32 @@
         </section>
     </main>
 
+    <!-- เครื่องเล่นเพลง Background (ลอยอยู่มุมขวาล่าง) -->
+    <div id="audio-player-container" class="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-black/80 backdrop-blur-md border border-white/10 px-4 py-2.5 rounded-full shadow-lg">
+        <div class="flex items-center gap-2">
+            <span class="relative flex h-3 w-3">
+              <span id="ping-dot" class="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75 hidden"></span>
+              <span id="static-dot" class="relative inline-flex rounded-full h-3 w-3 bg-neutral-500"></span>
+            </span>
+            <span class="text-xs text-neutral-300 font-medium">SIRISUK Radio</span>
+        </div>
+        <!-- ปุ่มควบคุม Play/Pause -->
+        <button onclick="toggleAudio()" id="play-btn" class="bg-yellow-500 hover:bg-yellow-400 text-black text-xs font-bold px-3 py-1.5 rounded-full transition cursor-pointer">
+            ▶ เล่นเพลง
+        </button>
+    </div>
+
+    <!-- ซ่อน YouTube Iframe ไว้สำหรับเล่นเสียงพื้นหลัง -->
+    <div style="display:none;">
+        <iframe id="youtube-audio" width="200" height="200" src="https://www.youtube.com/embed/pTQiOMm_53Y?enablejsapi=1&loop=1&playlist=pTQiOMm_53Y" allow="autoplay"></iframe>
+    </div>
+
     <!-- Footer -->
     <footer class="text-center py-6 text-neutral-500 text-xs tracking-wider border-t border-white/5">
         &copy; 2026 SIRISUK GANG. สงวนลิขสิทธิ์ทุกประการ.
     </footer>
 
-    <!-- Script สำหรับเปิด-ปิดเมนูมือถือ -->
+    <!-- Script สำหรับเปิด-ปิดเมนูมือถือ และ ระบบควบคุมเพลง -->
     <script>
         const btn = document.getElementById('menu-btn');
         const menu = document.getElementById('mobile-menu');
@@ -86,6 +106,42 @@
         btn.addEventListener('click', () => {
             menu.classList.toggle('hidden');
         });
+
+        // ระบบควบคุม YouTube Background Music
+        let player;
+        let isPlaying = false;
+
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('youtube-audio', {
+                events: {
+                    'onReady': (event) => {
+                        // ตั้งค่าระดับเสียงไว้ที่ 25 เหมาะสำหรับเปิดคลอเบาๆ
+                        player.setVolume(25);
+                    }
+                }
+            });
+        }
+
+        function toggleAudio() {
+            const btn = document.getElementById('play-btn');
+            const pingDot = document.getElementById('ping-dot');
+            const staticDot = document.getElementById('static-dot');
+            
+            if (!isPlaying) {
+                player.playVideo();
+                btn.innerText = '⏸ หยุดเพลง';
+                pingDot.classList.remove('hidden');
+                staticDot.classList.add('hidden');
+                isPlaying = true;
+            } else {
+                player.pauseVideo();
+                btn.innerText = '▶ เล่นเพลง';
+                pingDot.classList.add('hidden');
+                staticDot.classList.remove('hidden');
+                isPlaying = false;
+            }
+        }
     </script>
+    <script src="https://www.youtube.com/iframe_api"></script>
 </body>
 </html>
