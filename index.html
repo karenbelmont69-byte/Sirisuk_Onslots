@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เว็บไซต์ของฉัน</title>
+    <!-- เรียกใช้งานฟอนต์ Prompt จาก Google Fonts เพื่อให้เว็บดูสวยขึ้น -->
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* กำหนดสไตล์พื้นฐานของเว็บ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Prompt', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        /* กล่องการ์ดตรงกลาง */
+        .card {
+            background: #ffffff;
+            width: 100%;
+            max-width: 500px;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        /* รูปโปรไฟล์จำลอง */
+        .avatar {
+            width: 100px;
+            height: 100px;
+            background: #e2e8f0;
+            border-radius: 50%;
+            margin: 0 auto 20px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+        }
+        h1 {
+            font-size: 24px;
+            color: #1a202c;
+            margin-bottom: 10px;
+        }
+        p {
+            color: #718096;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        /* ปุ่มลิงก์ต่างๆ */
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background: #edf2f7;
+            color: #2d3748;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            background: #667eea;
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <!-- ไอคอนหรือรูปโปรไฟล์ -->
+        <div class="avatar">🚀</div>
+        
+        <!-- หัวข้อและคำอธิบาย -->
+        <h1>ยินดีต้อนรับสู่เว็บไซต์ของฉัน</h1>
+        <p>นี่คือหน้าเว็บทดลองที่สร้างขึ้นด้วย HTML และ CSS พร้อมอัปโหลดขึ้น GitHub Pages ได้ทันที!</p>
+        
+        <!-- ปุ่มกดเชื่อมโยงไปยังที่ต่างๆ -->
+        <div class="btn-group">
+            <a href="#" class="btn" target="_blank">Facebook ของฉัน</a>
+            <a href="#" class="btn" target="_blank">GitHub ของฉัน</a>
+            <a href="#" class="btn" target="_blank">ติดต่อเรา</a>
+        </div>
+    </div>
+
+</body>
+</html>
