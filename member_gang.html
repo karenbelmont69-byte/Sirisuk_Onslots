@@ -21,6 +21,14 @@
             display: flex;
             flex-direction: column;
         }
+        /* เพิ่ม Cursor ให้รู้ว่ารูปกดได้ */
+        .zoomable-img {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .zoomable-img:hover {
+            transform: scale(1.05);
+        }
     </style>
 </head>
 <body>
@@ -47,106 +55,3 @@
             <a href="index.html" class="text-neutral-400 hover:text-white font-medium">ประกาศ & ข่าวสาร</a>
             <a href="history" class="text-neutral-400 hover:text-white font-medium">ประวัติ</a>
             <a href="member_gang.html" class="text-white font-medium">สมาชิกแก๊ง</a>
-            <a href="story_score.html" class="text-neutral-400 hover:text-white font-medium">สตอรี่</a>
-        </div>
-    </header>
-
-    <!-- Main Content -->
-    <main class="flex-grow max-w-6xl w-full mx-auto px-6 py-12">
-        <div class="text-center my-12">
-            <h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-4">ทำความรู้จัก <span class="text-yellow-500">สมาชิกแก๊ง</span></h1>
-            <p class="text-neutral-400 text-base md:text-lg max-w-2xl mx-auto">รวมพลคนสิริสุข ตัวตึงและสมาชิกผู้ร่วมขับเคลื่อนแก๊งของเราทั้งหมด</p>
-        </div>
-
-        <!-- 👑 ส่วนหัวหน้าแก๊ง (แยกไว้ด้านบนสุด 1 คน เด่นๆ) -->
-        <section class="mb-16">
-            <h2 class="text-2xl font-semibold mb-6 text-center text-yellow-500">👑 หัวหน้าแก๊ง</h2>
-            <div class="max-w-md mx-auto bg-gradient-to-b from-yellow-500/10 to-white/5 border border-yellow-500/30 rounded-2xl p-6 text-center hover:border-yellow-500/50 transition shadow-lg shadow-yellow-500/5">
-                <!-- รูปภาพโปรไฟล์ -->
-                <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-2 border-yellow-500">
-                    <img src="PICTURE/540462747_122171923808546605_7703930638306390271_n.jpg" alt="Leader" class="w-full h-full object-cover">
-                </div>
-                <!-- ชื่อ & ตำแหน่ง -->
-                <h3 class="text-2xl font-bold text-white mb-1">Babe Paisangkom</h3>
-                <span class="text-xs bg-yellow-500/20 text-yellow-400 font-semibold px-3 py-1 rounded-full inline-block mb-4">Leader</span>
-                
-                <!-- ช่องทางติดตาม -->
-                <div class="flex justify-center gap-3 mt-4">
-                    <a href="https://www.facebook.com/bxbe.666/" target="_blank" class="bg-white/10 hover:bg-blue-600 text-white p-2.5 rounded-full transition text-sm" title="Facebook">facebook</a>
-                    <a href="https://www.youtube.com/@180bxbe" target="_blank" class="bg-white/10 hover:bg-red-600 text-white p-2.5 rounded-full transition text-sm" title="YouTube">youtube</a>
-                    <a href="https://www.tiktok.com/@xtoeraph_x1" target="_blank" class="bg-white/10 hover:bg-neutral-800 text-white p-2.5 rounded-full transition text-sm" title="Tiktok">titok</a>
-                    <a href="#" target="_blank" class="bg-white/10 hover:bg-purple-600 text-white p-2.5 rounded-full transition text-sm" title="Kick">Kick</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- 👥 ส่วนสมาชิกแก๊ง (แสดงแบบ Grid ด้านล่าง) -->
-        <section>
-            <h2 class="text-2xl font-semibold mb-6 text-center">สมาชิกภายในแก๊ง</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                
-                <!-- สมาชิก คนที่ 1 -->
-                <div class="bg-white/5 border border-white/10 rounded-2xl p-6 text-center hover:border-white/20 transition">
-                    <div class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border border-white/20">
-                        <img src="PICTURE/GTA5_2026-04-11_23-14-53.png" alt="Member" class="w-full h-full object-cover">
-                    </div>
-                    <h3 class="text-xl font-semibold text-white mb-1">Linda Asorrapit</h3>
-                    <span class="text-xs bg-white/10 text-neutral-300 font-semibold px-3 py-1 rounded-full inline-block mb-4">Member</span>
-                    
-                    <div class="flex justify-center gap-2 mt-2">
-                        <a href="https://www.facebook.com/profile.php?id=61581602582537" target="_blank" class="bg-white/5 hover:bg-blue-600 text-neutral-300 hover:text-white p-2 rounded-full transition text-xs">FB</a>
-                        <a href="#" target="_blank" class="bg-white/5 hover:bg-red-600 text-neutral-300 hover:text-white p-2 rounded-full transition text-xs">YT</a>
-                        <a href="https://www.tiktok.com/@linda_twt6?_r=1&_t=ZS-9AKbpu0sLsE" target="_blank" class="bg-white/5 hover:bg-neutral-800 text-neutral-300 hover:text-white p-2 rounded-full transition text-xs">TT</a>
-                        <a href="#" target="_blank" class="bg-white/5 hover:bg-purple-600 text-neutral-300 hover:text-white p-2 rounded-full transition text-xs">Kick</a>
-                    </div>
-                </div>
-
-                <!-- สมาชิก คนที่ 2 -->
-                <div class="bg-white/5 border border-white/10 rounded-2xl p-6 text-center hover:border-white/20 transition">
-                    <div class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border border-white/20">
-                        <img src="https://via.placeholder.com/150" alt="Member" class="w-full h-full object-cover">
-                    </div>
-                    <h3 class="text-xl font-semibold text-white mb-1">ชื่อสมาชิก 2</h3>
-                    <span class="text-xs bg-white/10 text-neutral-300 font-semibold px-3 py-1 rounded-full inline-block mb-4">Shooter</span>
-                    
-                    <div class="flex justify-center gap-2 mt-2">
-                        <a href="#" target="_blank" class="bg-white/5 hover:bg-blue-600 text-neutral-300 hover:text-white p-2 rounded-full transition text-xs">FB</a>
-                        <a href="#" target="_blank" class="bg-white/5 hover:bg-red-600 text-neutral-300 hover:text-white p-2 rounded-full transition text-xs">YT</a>
-                        <a href="#" target="_blank" class="bg-white/5 hover:bg-neutral-800 text-neutral-300 hover:text-white p-2 rounded-full transition text-xs">TT</a>
-                        <a href="#" target="_blank" class="bg-white/5 hover:bg-purple-600 text-neutral-300 hover:text-white p-2 rounded-full transition text-xs">Kick</a>
-                    </div>
-                </div>
-
-
-
-                <div class="bg-white/5 border border-white/10 rounded-2xl p-6 text-center hover:border-white/20 transition">
-                    <div class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border border-white/20">
-                        <img src="https://via.placeholder.com/150" alt="Member" class="w-full h-full object-cover">
-                    </div>
-                    <h3 class="text-xl font-semibold text-white mb-1">ชื่อสมาชิก 3</h3>
-                    <span class="text-xs bg-white/10 text-neutral-300 font-semibold px-3 py-1 rounded-full inline-block mb-4">Support</span>
-                    
-                    <div class="flex justify-center gap-2 mt-2">
-                        <a href="#" target="_blank" class="bg-white/5 hover:bg-blue-600 text-neutral-300 hover:text-white p-2 rounded-full transition text-xs">FB</a>
-                        <a href="#" target="_blank" class="bg-white/5 hover:bg-red-600 text-neutral-300 hover:text-white p-2 rounded-full transition text-xs">YT</a>
-                        <a href="#" target="_blank" class="bg-white/5 hover:bg-neutral-800 text-neutral-300 hover:text-white p-2 rounded-full transition text-xs">TT</a>
-                        <a href="#" target="_blank" class="bg-white/5 hover:bg-purple-600 text-neutral-300 hover:text-white p-2 rounded-full transition text-xs">Kick</a>
-                    </div>
-                </div>
-
-    <!-- Footer -->
-    <footer class="text-center py-6 text-neutral-500 text-xs tracking-wider border-t border-white/5">
-        &copy; 2026 SIRISUK GANG. สงวนลิขสิทธิ์ทุกประการ.
-    </footer>
-
-    <!-- Script สำหรับเปิด-ปิดเมนูมือถือ -->
-    <script>
-        const btn = document.getElementById('menu-btn');
-        const menu = document.getElementById('mobile-menu');
-
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
-    </script>
-</body>
-</html>
