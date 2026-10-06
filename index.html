@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SIRISUK GANG - หน้าแรก</title> 
+    <title>SIRISUK GANG - ประวัติความเป็นมา</title> 
     <!-- เรียกใช้งานฟอนต์ Prompt จาก Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -25,28 +25,70 @@
 </head>
 <body>
 
+    <!-- Header & Navbar -->
     <header class="w-full bg-black/60 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-white text-lg md:text-xl font-semibold tracking-wider flex items-center gap-2">
+            <a href="index.html" class="text-white text-lg md:text-xl font-semibold tracking-wider flex items-center gap-2">
                 <span>⚡</span> SIRISUK GANG
             </a>
             <nav class="hidden md:flex gap-8 items-center">
-                <a href="index.html" class="text-neutral-400 hover:text-white transition font-medium">ประกาศ</a>
-                <a href="history" class="text-neutral-400 hover:text-white transition font-medium">ประวัติ</a>
+                <a href="index.html" class="text-neutral-400 hover:text-white transition font-medium">ประกาศ & ข่าวสาร</a>
+                <a href="history.html" class="text-white transition font-medium">ประวัติ</a>
                 <a href="member_gang.html" class="text-neutral-400 hover:text-white transition font-medium">สมาชิกแก๊ง</a>
                 <a href="story_score.html" class="text-neutral-400 hover:text-white transition font-medium">สตอรี่</a>
             </nav>
             <!-- Mobile Menu Toggle Button -->
-            <button class="md:hidden text-white focus:outline-none text-2xl">
+            <button id="menu-btn" class="md:hidden text-white focus:outline-none text-2xl">
                 ☰
             </button>
         </div>
+        <!-- Mobile Menu (Dropdown) -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 pt-2 bg-black/90 border-b border-white/10 flex flex-col gap-4">
+            <a href="index.html" class="text-neutral-400 font-medium">ประกาศ & ข่าวสาร</a>
+            <a href="history.html" class="text-white font-medium">ประวัติ</a>
+            <a href="member_gang.html" class="text-neutral-400 font-medium">สมาชิกแก๊ง</a>
+            <a href="story_score.html" class="text-neutral-400 font-medium">สตอรี่</a>
+        </div>
     </header>
 
+    <!-- Main Content (History) -->
+    <main class="flex-grow max-w-4xl w-full mx-auto px-6 py-12">
+        <div class="text-center my-8">
+            <!-- แสดงรูป sirisukT.png ไว้ด้านบนคำว่า SIRISUK ตามความต้องการ -->
+            <div class="flex justify-center mb-4">
+                <img src="PICTURE/sirisukT.png" alt="Sirisuk Logo" class="h-20 md:h-28 object-contain drop-shadow-lg">
+            </div>
+            <h1 class="text-3xl md:text-5xl font-bold tracking-tight mb-2 text-white">ประวัติความเป็นมา</h1>
+            <p class="text-neutral-400 text-sm md:text-base">จุดกำเนิดและเรื่องราวการเดินทางของพวกเรา SIRISUK GANG</p>
+        </div>
 
+        <!-- เนื้อหาประวัติ -->
+        <section class="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-10 shadow-xl backdrop-blur-sm space-y-6">
+            <div class="border-l-4 border-yellow-500 pl-4 py-1">
+                <h2 class="text-xl md:text-2xl font-semibold text-white">จุดเริ่มต้นที่ METRO TOWN 1.0</h2>
+            </div>
+            <p class="text-neutral-300 text-base md:text-lg leading-relaxed">
+                <strong class="text-white">Sirisuk</strong> เกิดครั้งแรกที่ <span class="text-yellow-400 font-semibold">METRO TOWN 1.0</span> ซึ่งสร้างขึ้นโดย <span class="text-white font-semibold">Babe Paisangkom</span> และเพื่อนๆ ในเวลานั้น
+            </p>
+            <p class="text-neutral-300 text-base md:text-lg leading-relaxed">
+                โดยสีแรกที่ถูกเลือกใช้งานและเป็นสัญลักษณ์เริ่มต้นก็คือ <span class="text-neutral-200 font-bold bg-neutral-800 px-3 py-1 rounded-md border border-white/20 inline-block">สีดำ</span> ซึ่งสะท้อนถึงความแข็งแกร่งและเอกลักษณ์ของพวกเราตั้งแต่จุดเริ่มต้น
+            </p>
+        </section>
+    </main>
+
+    <!-- Footer -->
     <footer class="text-center py-6 text-neutral-500 text-xs tracking-wider border-t border-white/5">
         &copy; 2026 SIRISUK GANG. สงวนลิขสิทธิ์ทุกประการ.
     </footer>
 
+    <!-- Script สำหรับเปิด-ปิดเมนูมือถือ -->
+    <script>
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>
